@@ -1,14 +1,16 @@
 print("Sistema de Soporte Académico")
 
-
 def registrar_solicitud(codigo, nombre, tipo_consulta, descripcion):
-    solicitud = {
+    return {
         "codigo": codigo,
         "nombre": nombre,
         "tipo_consulta": tipo_consulta,
         "descripcion": descripcion
     }
-    return solicitud
+
+
+def validar_codigo(codigo):
+    return codigo.strip() != "" and len(codigo) >= 5
 
 
 solicitud = registrar_solicitud(
@@ -18,8 +20,6 @@ solicitud = registrar_solicitud(
     "Consulta sobre inscripción de cursos"
 )
 
-print("\n--- Solicitud registrada ---")
+print("\n--- Validación del código ---")
 print("Código:", solicitud["codigo"])
-print("Nombre:", solicitud["nombre"])
-print("Tipo:", solicitud["tipo_consulta"])
-print("Descripción:", solicitud["descripcion"])
+print("Código válido:", validar_codigo(solicitud["codigo"]))
