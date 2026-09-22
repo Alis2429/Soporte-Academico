@@ -3,20 +3,24 @@ print("   SISTEMA DE SOPORTE ACADÉMICO")
 print("===================================")
 
 
+# Req. 4: muestra el menú principal
 def mostrar_menu():
     print("\n--- MENÚ PRINCIPAL ---")
     print("1. Registrar solicitud")
     print("2. Salir")
 
 
+# Req. 6: valida que un texto no esté vacío
 def validar_texto(texto):
     return texto.strip() != ""
 
 
+# Req. 2: valida el código del estudiante
 def validar_codigo(codigo):
     return validar_texto(codigo) and len(codigo) >= 5
 
 
+# Req. 3: valida el tipo de consulta
 def validar_tipo_consulta(tipo):
     tipos_validos = [
         "matrícula",
@@ -25,9 +29,11 @@ def validar_tipo_consulta(tipo):
         "plataforma",
         "otro"
     ]
+
     return tipo.lower() in tipos_validos
 
 
+# Req. 5: asigna la prioridad según el tipo de consulta
 def asignar_prioridad(tipo_consulta):
     if tipo_consulta.lower() in ["matrícula", "pagos"]:
         return "Alta"
@@ -37,6 +43,7 @@ def asignar_prioridad(tipo_consulta):
         return "Baja"
 
 
+# Req. 1: registra los datos de la solicitud
 def registrar_solicitud(codigo, nombre, tipo_consulta, descripcion):
     prioridad = asignar_prioridad(tipo_consulta)
 
@@ -51,6 +58,7 @@ def registrar_solicitud(codigo, nombre, tipo_consulta, descripcion):
     return solicitud
 
 
+# Req. 7: muestra el resumen de la solicitud
 def mostrar_resumen(solicitud):
     print("\n--- RESUMEN DE SOLICITUD ---")
     print("Código:", solicitud["codigo"])
@@ -59,7 +67,10 @@ def mostrar_resumen(solicitud):
     print("Descripción:", solicitud["descripcion"])
     print("Prioridad:", solicitud["prioridad"])
 
+
+# Req. 8 y 9: utiliza parámetros y variables locales
 def registrar_y_mostrar(codigo, nombre, tipo, descripcion):
+
     if not validar_codigo(codigo):
         print("Error: código inválido.")
         return
@@ -85,6 +96,8 @@ def registrar_y_mostrar(codigo, nombre, tipo, descripcion):
 
     mostrar_resumen(solicitud)
 
+
+# Req. 10: registra tres solicitudes en una ejecución
 solicitudes = [
     ("N00543943", "Alisson", "matrícula", "Consulta sobre inscripción"),
     ("B67890", "Luis", "pagos", "Consulta sobre pago de matrícula"),
@@ -103,7 +116,10 @@ for solicitud in solicitudes:
         solicitud[2],
         solicitud[3]
     )
-    print("\n===================================")
+
+
+# Req. 11: realiza las pruebas del sistema
+print("\n===================================")
 print("          PRUEBAS DEL SISTEMA")
 print("===================================")
 
