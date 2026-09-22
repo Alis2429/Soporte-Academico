@@ -59,12 +59,19 @@ def mostrar_resumen(solicitud):
     print("Descripción:", solicitud["descripcion"])
     print("Prioridad:", solicitud["prioridad"])
 
+def registrar_y_mostrar(codigo, nombre, tipo, descripcion):
+    solicitud = registrar_solicitud(
+        codigo,
+        nombre,
+        tipo,
+        descripcion
+    )
 
-solicitud = registrar_solicitud(
+    mostrar_resumen(solicitud)
+
+registrar_y_mostrar(
     "N00543943",
     "Alisson",
     "matrícula",
     "Consulta sobre inscripción de cursos"
 )
-
-mostrar_resumen(solicitud)
