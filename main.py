@@ -103,3 +103,27 @@ for solicitud in solicitudes:
         solicitud[2],
         solicitud[3]
     )
+    print("\n===================================")
+print("          PRUEBAS DEL SISTEMA")
+print("===================================")
+
+print("\nPrueba 1 - Datos válidos:")
+print(validar_codigo("A12345"))
+
+print("\nPrueba 2 - Código vacío:")
+print(validar_codigo(""))
+
+print("\nPrueba 3 - Código menor de 5 caracteres:")
+print(validar_codigo("123"))
+
+print("\nPrueba 4 - Tipo de consulta correcto:")
+print(validar_tipo_consulta("pagos"))
+
+print("\nPrueba 5 - Tipo de consulta incorrecto:")
+print(validar_tipo_consulta("biblioteca"))
+
+print("\nPrueba 6 - Prioridad alta:")
+print(asignar_prioridad("matrícula"))
+
+print("\nPrueba 7 - Prioridad baja:")
+print(asignar_prioridad("otro"))
