@@ -85,9 +85,21 @@ def registrar_y_mostrar(codigo, nombre, tipo, descripcion):
 
     mostrar_resumen(solicitud)
 
-registrar_y_mostrar(
-    "N00543943",
-    "Alisson",
-    "matrícula",
-    "Consulta sobre inscripción de cursos"
-)
+solicitudes = [
+    ("N00543943", "Alisson", "matrícula", "Consulta sobre inscripción"),
+    ("B67890", "Luis", "pagos", "Consulta sobre pago de matrícula"),
+    ("C54321", "María", "otro", "Consulta general")
+]
+
+
+print("\n===================================")
+print("       REGISTRO DE SOLICITUDES")
+print("===================================")
+
+for solicitud in solicitudes:
+    registrar_y_mostrar(
+        solicitud[0],
+        solicitud[1],
+        solicitud[2],
+        solicitud[3]
+    )
