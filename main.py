@@ -60,6 +60,22 @@ def mostrar_resumen(solicitud):
     print("Prioridad:", solicitud["prioridad"])
 
 def registrar_y_mostrar(codigo, nombre, tipo, descripcion):
+    if not validar_codigo(codigo):
+        print("Error: código inválido.")
+        return
+
+    if not validar_texto(nombre):
+        print("Error: nombre vacío.")
+        return
+
+    if not validar_tipo_consulta(tipo):
+        print("Error: tipo de consulta inválido.")
+        return
+
+    if not validar_texto(descripcion):
+        print("Error: descripción vacía.")
+        return
+
     solicitud = registrar_solicitud(
         codigo,
         nombre,
